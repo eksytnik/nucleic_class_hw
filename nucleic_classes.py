@@ -20,7 +20,7 @@ class DNA(RNA):
     def __init__(self, dna_seq):
         self.sequence = dna_seq.upper()
         if not all(symb in 'ACTG' for symb in self.sequence):
-            raise ZeroDivisionError('Sequence contains inappropriate base.')
+            raise Exception('Sequence contains inappropriate base.')
 
     def transcribe(self):
         return RNA(self.sequence.replace('T', 'U'))
