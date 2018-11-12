@@ -12,7 +12,7 @@ class RNA(str):
             raise ZeroDivisionError('Unable to count GC-content for empty sequence.')
 
     def reverse_complement(self):
-        rna_tab = str.maketrans("ACGU", "UGCA")
+        rna_tab = str.maketrans('ACGU', 'UGCA')
         return RNA(self.sequence.translate(rna_tab)[::-1])
 
 
@@ -26,5 +26,5 @@ class DNA(RNA):
         return RNA(self.sequence.replace('T', 'U'))
 
     def reverse_complement(self):
-        dna_tab = str.maketrans("ACTG", "TGAC")
+        dna_tab = str.maketrans('ACTG', 'TGAC')
         return DNA(self.sequence.translate(dna_tab)[::-1])
